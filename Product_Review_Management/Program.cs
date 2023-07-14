@@ -34,9 +34,32 @@ public class program
             new Product() {UserId=24,ProductId=13,Rating=3,Review="Avg",IsLike=true},
             new Product() {UserId=25,ProductId=14,Rating=2,Review="Bad",IsLike=true},
         };
-        foreach (var item in list)
+       
+        void Display(List<Product> list)
         {
-            Console.WriteLine(item.UserId + " " + item.ProductId + " " + item.Rating + " " + item.Review + " " + item.IsLike);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item.UserId + " " + item.ProductId + " " + item.Rating + " " + item.Review + " " + item.IsLike);
+            }
+        }
+        Operation operation = new Operation();
+        bool flag = true;
+        while (flag)
+        {
+            Console.WriteLine("Select Option \n 1.Display data \n 2.Top Records \n 3.Exit");
+            int option = Convert.ToInt32(Console.ReadLine());
+            switch (option)
+            {
+                case 1:
+                    Display(list);
+                    break;
+                case 2:
+                    operation.TopRecords(list);
+                    break;
+                case 3:
+                    flag = false;
+                    break;
+            }
         }
     }
 }
