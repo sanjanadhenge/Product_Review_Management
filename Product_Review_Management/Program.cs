@@ -46,7 +46,7 @@ public class program
         bool flag = true;
         while (flag)
         {
-            Console.WriteLine("Select Option \n 1.Display data \n 2.Top Records \n 3.Exit");
+            Console.WriteLine("Select Option \n 1.Display data \n 2.Top Records \n 3.Select Records \n 4.Exit");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -57,6 +57,9 @@ public class program
                     operation.TopRecords(list);
                     break;
                 case 3:
+                    operation.RetriveRatings(list);
+                    break;
+                case 4:
                     flag = false;
                     break;
             }
